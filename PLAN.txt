@@ -1,0 +1,53 @@
+Core side
+Registor page with choices (admin , user)
+Opens page for registoring admin , user (2 different portals (with different mongo collectins))
+rederecting to log in page
+after log in page to the portal of admin and user 
+Admin page sees Requests from user 
+User can create Requests & delete them 
+
+--------------------------
+
+Registor page
+------------
+
+Backend
+---
+server creating
+mongo connection
+model creation 
+routing 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Client side
+
+Backend
+1 Launch express server
+2 Create mongo connection
+3 create model collection (Requests(user_reqs))
+4 create form with fetching data to database 
+5 at the same time fetch back data to the page of Requests 
+6 set the status button (default open)
+7 set click to delete statement 
+
+
+
+Frotnend
+
+Admin side
+1
+2
+3
+4
+5
