@@ -36,12 +36,12 @@ app.get('/AdminAuth', (req, res) => {
 
 
 
-app.post('/Usersreg', async (req, res) => {
+app.post('/userauth', async (req, res) => {
     
     const formData  = JSON.stringify( req.body);
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http://localhost:1010/userauth/Usersregistration"
+    const  url = "http://localhost:1010/userauth/usersregistration"
     const  method = "POST";
     const  data = formData
 
@@ -57,7 +57,7 @@ app.post('/Usersreg', async (req, res) => {
 
 })
 
-app.post('/Adminssreg', async (req, res) => {
+app.post('/adminauth', async (req, res) => {
     
     const formData  = JSON.stringify( req.body);
     console.log(formData);
@@ -77,7 +77,6 @@ app.post('/Adminssreg', async (req, res) => {
     http.send(data);
 
 })
-
 
 
 

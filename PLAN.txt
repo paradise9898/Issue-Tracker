@@ -26,17 +26,17 @@ registering Admin page
 -----------------------
 Backend 
 
-Mongo model creation
-Auth controller
-auth router
+Mongo model creation +
+Auth controller +
+auth router + 
+fetch from front to db
 after registering admin page redirects to blank page (which will be with requess that will be fetched
  from db to admin page with box of reply that fetches back to user and his mail)
 
 
 Frotnend
-Create basic template
-show request from db    
-
+Admin pug page registoring
+fetch to backend
 
 
 
