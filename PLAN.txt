@@ -1,5 +1,5 @@
 Core side
-Registor page with choices (admin , user)
+Registor page with choices (admin , user) + 
 Opens page for registoring admin , user (2 different portals (with different mongo collectins))
 rederecting to log in page
 after log in page to the portal of admin and user 
@@ -8,15 +8,34 @@ User can create Requests & delete them
 
 --------------------------
 
-Registor page
+Role selection
 ------------
 
 Backend
 ---
-server creating
-mongo connection
-model creation 
-routing 
+server creating +
+routing to admin page registoring +
+routing to user page registoring+
+
+Frotnend
+Pug design +
+css design+ 
+--------------------------------------------------------------
+
+registering Admin page
+-----------------------
+Backend 
+
+Mongo model creation
+Auth controller
+auth router
+after registering admin page redirects to blank page (which will be with requess that will be fetched
+ from db to admin page with box of reply that fetches back to user and his mail)
+
+
+Frotnend
+Create basic template
+show request from db    
 
 
 

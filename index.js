@@ -2,7 +2,8 @@ const express = require ('express')
 const app = express()
 const path = require('path')
 const mongoose = require('mongoose')
-const authRouter = require ('./controllers/authRouter')
+const UsersRouter = require ('./controllers/UsersRouter')
+const AdminsRouter = require ('./controllers/AdminsRouter')
 const XMLHttpRequest = require('xhr2')
 const PORT = process.env.PORT || 1010
 
@@ -14,7 +15,8 @@ app.set('view engine', 'pug')
 app.use(express(__dirname + '/views'))
 app.use("/public", express.static(path.join(__dirname, 'public')));
 
-app.use('/auth', authRouter);
+app.use('/userauth', UsersRouter);
+app.use('/adminauth', AdminsRouter);
 
 
 // routes
@@ -34,12 +36,12 @@ app.get('/AdminAuth', (req, res) => {
 
 
 
-app.post('/reg', async (req, res) => {
+app.post('/Usersreg', async (req, res) => {
     
     const formData  = JSON.stringify( req.body);
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http://localhost:1010/auth/registration"
+    const  url = "http://localhost:1010/userauth/Usersregistration"
     const  method = "POST";
     const  data = formData
 
@@ -55,6 +57,26 @@ app.post('/reg', async (req, res) => {
 
 })
 
+app.post('/Adminssreg', async (req, res) => {
+    
+    const formData  = JSON.stringify( req.body);
+    console.log(formData);
+    const  http = new XMLHttpRequest();
+    const  url = "http://localhost:1010/adminauth/adminsregistration"
+    const  method = "POST";
+    const  data = formData
+
+    http.open(method, url,);
+    http.setRequestHeader('Content-Type', 'application/json');
+    http.onreadystatechange = function(){
+      if (http.readyState === XMLHttpRequest.DONE && http.status === 201){
+        console.log(JSON.parse(http.responseText));
+      }
+    }
+
+    http.send(data);
+
+})
 
 
 
