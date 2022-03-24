@@ -41,7 +41,7 @@ app.post('/userauth', async (req, res) => {
     const formData  = JSON.stringify( req.body);
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http://testwork10.herokuapp.com//userauth/usersregistration"
+    const  url = "http://testwork10.herokuapp.com/userauth/usersregistration"
     const  method = "POST";
     const  data = formData
 
