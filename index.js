@@ -4,6 +4,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const UsersRouter = require ('./controllers/UsersRouter')
 const AdminsRouter = require ('./controllers/AdminsRouter')
+const UserIssueRouter = require ('./controllers/UserIssueRouter')
 const XMLHttpRequest = require('xhr2')
 const PORT = process.env.PORT || 1010
 
@@ -15,8 +16,12 @@ app.set('view engine', 'pug')
 app.use(express(__dirname + '/views'))
 app.use("/public", express.static(path.join(__dirname, 'public')));
 
+
+//middlewares
 app.use('/userauth', UsersRouter);
 app.use('/adminauth', AdminsRouter);
+app.use('/userissue', UserIssueRouter);
+
 
 
 // routes
@@ -36,9 +41,11 @@ app.get('/AdminAuth', (req, res) => {
 
 
 
+
+
 app.post('/userauth', async (req, res) => {
     
-    const formData  = JSON.stringify( req.body);
+    const formData  = JSON.stringify( req.body); 
     console.log(formData);
     const  http = new XMLHttpRequest();
     const  url = "http://testwork10.herokuapp.com/userauth/usersregistration"
@@ -55,6 +62,7 @@ app.post('/userauth', async (req, res) => {
 
     http.send(data);
 
+    res.render('userpage')
 })
 
 app.post('/adminauth', async (req, res) => {
@@ -76,6 +84,8 @@ app.post('/adminauth', async (req, res) => {
 
     http.send(data);
 
+
+    res.render('adminpage')
 })
 
 

@@ -1,7 +1,6 @@
 Core side
 Registor page with choices (admin , user) + 
-Opens page for registoring admin , user (2 different portals (with different mongo collectins))
-rederecting to log in page
+Opens page for registoring admin , user (2 different portals (with different mongo collectins))+
 after log in page to the portal of admin and user 
 Admin page sees Requests from user 
 User can create Requests & delete them 
@@ -30,16 +29,19 @@ Mongo model creation +
 Auth controller +
 auth router + 
 fetch from front to db
-after registering admin page redirects to blank page (which will be with requess that will be fetched
- from db to admin page with box of reply that fetches back to user and his mail)
-
 
 Frotnend
-Admin pug page registoring
-fetch to backend
+Admin pug page registoring +
+fetch to backend +
 
 
+--------------------
 
+
+Problems page Of Users page
+----------------------
+after registering admin page redirects to blank page (which will be with requess that will be fetched
+ from db to admin page with box of reply that fetches back to user and his mail)
 
 
 
