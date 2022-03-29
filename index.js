@@ -63,7 +63,7 @@ app.post('/userauth', async (req, res) => {
     http.send(data);
 
     res.render('userpage')
-})
+});
 
 app.post('/adminauth', async (req, res) => {
     
@@ -86,15 +86,29 @@ app.post('/adminauth', async (req, res) => {
 
 
     res.render('adminpage')
-})
+});
 
 
+app.post('/userissue', async (req, res) => {
 
+    const formData  = JSON.stringify( req.body);
+    console.log(formData);
+    const  http = new XMLHttpRequest();
+    const  url = "http:localhost:1010/userissue/userissue"
+    const  method = "POST";
+    const  data = formData
 
+    http.open(method, url,);
+    http.setRequestHeader('Content-Type', 'application/json');
+    http.onreadystatechange = function(){
+      if (http.readyState === XMLHttpRequest.DONE && http.status === 201){
+        console.log(JSON.parse(http.responseText));
+      }
+    }
 
+    http.send(data);
 
-
-
+});
 
 
 

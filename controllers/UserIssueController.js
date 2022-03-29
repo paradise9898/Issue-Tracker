@@ -1,7 +1,7 @@
 const User = require('../models/UserIssue')
 
 class UserIssueController{
-    async aregistration(req, res) {
+    async issues(req, res) {
         try {
             const {Username, Issue, Date, } = req.body
             

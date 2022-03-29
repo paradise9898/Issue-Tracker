@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Admin Registration
+    body 
+.body-content
+    .module
+        h1 Create an account
+        form.form(action='/adminauth' method='post')
+            .alert.alert-error
+            
+            input#Username(type='text' placeholder='username' name='username' required='')
+            input#Issue(type='text' placeholder='issue' name='issue' required='')
+            
+            
+    
+            input.btn.btn-block.btn-primary(type='submit')
+
+script.
+  Document.getElementById('Username').textContent = Username;
+  Document.getElementById('Issue').textContent = Issue;
+  Document.getElementById('Date').textContent = TodaysDate;
+
+  const data = {Username, Issue, TodaysDate};
+  const options = {
+  method: 'POST'
+  headers: {
+  'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+  };
+  fetch('' , options)
+  console.log(Username)
+  console.log(Issue)
+  console.log(TodaysDate)
+  
+/if smth doesnt work , then bring back the slash req 
+  fetch('/req' , options)
+
+
