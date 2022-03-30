@@ -8,6 +8,9 @@ const UserIssueRouter = require ('./controllers/UserIssueRouter')
 const XMLHttpRequest = require('xhr2')
 const PORT = process.env.PORT || 1010
 
+
+
+
 //encoding
 app.use(express.json())
 app.use(express.json({extended: true}))
@@ -94,7 +97,7 @@ app.post('/userissue', async (req, res) => {
     const formData  = JSON.stringify( req.body);
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http:localhost:1010/userissue/userissue"
+    const  url = "http://localhost:1010/userissue/userissue"
     const  method = "POST";
     const  data = formData
 
@@ -115,7 +118,7 @@ app.post('/userissue', async (req, res) => {
 
 async function launch(){
     try {
-        await mongoose.connect('mongodb+srv://testwork11:qwerty12345@testwork11.1m3f6.mongodb.net/testwork11?retryWrites=true&w=majority',{ useNewUrlParser: true } , { useUnifiedTopology: true },)
+        await mongoose.connect('mongodb+srv://testwork11:qwerty12345@cluster0.wb3ls.mongodb.net/testwork11?retryWrites=true&w=majority',{ useNewUrlParser: true } , { useUnifiedTopology: true },)
     } catch (error) {
         console.log(error);
     }
