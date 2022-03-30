@@ -7,6 +7,7 @@ const AdminsRouter = require ('./controllers/AdminsRouter')
 const UserIssueRouter = require ('./controllers/UserIssueRouter')
 const XMLHttpRequest = require('xhr2')
 const PORT = process.env.PORT || 1010
+const lkl = require('./models/Users')
 
 
 
@@ -111,9 +112,14 @@ app.post('/userissue', async (req, res) => {
 
     http.send(data);
 
+    res.redirect('/data');
 });
 
-
+app.get('/data',  async(req, res) => {
+    const data = await lkl.find();
+    const obj = JSON.parse(data);
+    res.send(obj);
+})
 
 
 async function launch(){

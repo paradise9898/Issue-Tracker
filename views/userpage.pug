@@ -9,11 +9,11 @@ html(lang="en")
 .body-content
     .module
         h1 Create an account
-        form.form(action='/adminauth' method='post')
+        form.form(action='/userissue' method='post')
             .alert.alert-error
             
-            input#Username(type='text' placeholder='username' name='username' required='')
-            input#Issue(type='text' placeholder='issue' name='issue' required='')
+            input#Username(type='text' placeholder='Username' name='Username' required='')
+            input#Issue(type='text' placeholder='Issue' name='Issue' required='')
             
             
     
@@ -37,7 +37,6 @@ script.
   console.log(Issue)
   console.log(TodaysDate)
   
-/if smth doesnt work , then bring back the slash req 
-  fetch('/req' , options)
+
 
 
