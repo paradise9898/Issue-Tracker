@@ -130,7 +130,7 @@ app.post('/solution', function(req, res){
     const formData  = JSON.stringify( req.body);
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http://localhost:1010/solution/adminssolutions"
+    const  url = "http://testwork10.herokuapp.com/solution/adminssolutions"
     const  method = "POST";
     const  data = formData
 
