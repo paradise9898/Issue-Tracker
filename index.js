@@ -6,9 +6,10 @@ const UsersRouter = require ('./controllers/UsersRouter')
 const AdminsRouter = require ('./controllers/AdminsRouter')
 const UserIssueRouter = require ('./controllers/UserIssueRouter')
 const XMLHttpRequest = require('xhr2')
+const consolidate = require('consolidate')
 const PORT = process.env.PORT || 1010
-const lkl = require('./models/Users')
-
+const lkl = require('./models/UserIssue')
+/////////////////////////////////////////////////////////////////////
 
 
 
@@ -30,6 +31,7 @@ app.use('/userissue', UserIssueRouter);
 
 // routes
 
+//front
 app.get('/', (req, res) => {
     res.render('corepage')
 })
@@ -46,7 +48,7 @@ app.get('/AdminAuth', (req, res) => {
 
 
 
-
+//Authrisation and issue posting
 app.post('/userauth', async (req, res) => {
     
     const formData  = JSON.stringify( req.body); 
@@ -89,7 +91,7 @@ app.post('/adminauth', async (req, res) => {
     http.send(data);
 
 
-    res.render('adminpage')
+    res.redirect('adminpage')
 });
 
 
@@ -115,11 +117,39 @@ app.post('/userissue', async (req, res) => {
     res.redirect('/data');
 });
 
+
+
+
+
+
+
+
+
+
+//getting data from db
 app.get('/data',  async(req, res) => {
     const data = await lkl.find();
     const obj = JSON.parse(data);
     res.send(obj);
 })
+
+app.get('/adminpage', async (req, res) => {
+   const data = await lkl.find();
+  res.send(data);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 async function launch(){
