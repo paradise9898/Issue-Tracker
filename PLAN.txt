@@ -2,8 +2,8 @@ Core side
 Registor page with choices (admin , user) + 
 Opens page for registoring admin , user (2 different portals (with different mongo collectins))+
 after log in page to the portal of admin and user 
-Admin page sees Requests from user 
-User can create Requests & delete them 
+Admin page sees Requests from user +
+User can create Requests & delete them + 
 
 --------------------------
 
@@ -36,6 +36,28 @@ fetch to backend +
 
 
 --------------------
+
+Requests Side of Admin +
+Requests Side of User +
+
+--------------------------------
+Fetching Request to Admin
+-----------
+Backend
+Pass the statement to database 
+Pass request to admin page
+Admin page refresh button 
+
+frontend
+fetch from Users backend to Admins backend
+Visualise the data that was fetched from the user backend
+
+OPT WATCH HOUR VIDEO OF CRUDS
+
+
+
+
+
 
 
 Problems page Of Users page
@@ -75,11 +97,3 @@ Admin side
 
 
 
-
-
-get some food and relaxation
-continue a1 a2 prepare all of them
-tomorrow start preparing the content for it
-
-test your new addition to test work
-change data and apply for some work 
