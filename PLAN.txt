@@ -44,15 +44,53 @@ Requests Side of User +
 Fetching Request to Admin
 -----------
 Backend
-Pass the statement to database 
-Pass request to admin page
+Pass the statement to database +
+Pass request to admin page +
 Admin page refresh button 
 
 frontend
-fetch from Users backend to Admins backend
-Visualise the data that was fetched from the user backend
+Get data from userissues db to main page of admin page +
+design the form of reqests 
+
+
 
 OPT WATCH HOUR VIDEO OF CRUDS
+
+
+
+
+----------- 
+Admin answers will be posted to db 
+and user page will be shown the data that was provided by admin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

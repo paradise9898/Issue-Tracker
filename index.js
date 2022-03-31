@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const UsersRouter = require ('./controllers/UsersRouter')
 const AdminsRouter = require ('./controllers/AdminsRouter')
 const UserIssueRouter = require ('./controllers/UserIssueRouter')
+const SolutionRouter = require ('./controllers/SolutionRouter')
 const XMLHttpRequest = require('xhr2')
 const PORT = process.env.PORT || 1010
 const lkl = require('./models/UserIssue')
@@ -33,7 +34,7 @@ app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use('/userauth', UsersRouter);
 app.use('/adminauth', AdminsRouter);
 app.use('/userissue', UserIssueRouter);
-
+app.use('/solution', SolutionRouter);
 
 
 // routes
@@ -125,6 +126,27 @@ app.post('/userissue', async (req, res) => {
 });
 
 
+app.post('/solution', async (req, res) => {
+ 
+ 
+  const formData  = JSON.stringify( req.body);
+  console.log(formData);
+  const  http = new XMLHttpRequest();
+  const  url = "http://localhost:1010/solution/solution"
+  const  method = "POST";
+  const  data = formData
+
+  http.open(method, url,);
+  http.setRequestHeader('Content-Type', 'application/json');
+  http.onreadystatechange = function(){
+    if (http.readyState === XMLHttpRequest.DONE && http.status === 201){
+      console.log(JSON.parse(http.responseText));
+    }
+  }
+
+  http.send(data);
+})
+
 
 
 
@@ -135,10 +157,13 @@ app.post('/userissue', async (req, res) => {
 
 //getting data from db
 app.get('/data',  async(req, res) => {
-    res.send('sent')
+    
 })
 
 
+
+
+//Getting data from db to admin page
 app.get('/adminpage', async (req, res) => {
 
 try {

@@ -2,9 +2,31 @@ doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         title Document
     body 
-    each issue in x
-        h3 data is: #{issue.Username}
+    link(rel='stylesheet' href='./public/adminpage.css' type='text/css')
+each issue in x
+        .shape              
+           p
+            |   Name : #{issue.Username} 
+            br
+            |  Issue : #{issue.Issue}
+            form.form(action='/solution' method='post')
+                input#Solution(type='text' placeholder='Solution' name='Solution' required='')
+
+                input.btn.btn-block.btn-primary(type='submit')
+
+script.
+ Document.getElementById('Solution').textContent = Solution;
+ const data = {Solution};
+ const options = {
+ method: 'POST'
+ headers: {
+ 'Content-Type': 'application/json'
+ },
+ body: JSON.stringify(data)
+  };
+ fetch('' , options)
+ 
