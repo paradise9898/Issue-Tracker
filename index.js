@@ -135,7 +135,7 @@ app.post('/userissue', async (req, res) => {
 
 //getting data from db
 app.get('/data',  async(req, res) => {
-    
+    res.send('sent')
 })
 
 
