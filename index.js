@@ -5,11 +5,11 @@ const mongoose = require('mongoose')
 const UsersRouter = require ('./controllers/UsersRouter')
 const AdminsRouter = require ('./controllers/AdminsRouter')
 const UserIssueRouter = require ('./controllers/UserIssueRouter')
-const SolutionRouter = require ('./controllers/SolutionRouter')
+const AdminSolutions = require ('./controllers/AdminsSolutionRouter')
 const XMLHttpRequest = require('xhr2')
 const PORT = process.env.PORT || 1010
 const lkl = require('./models/UserIssue')
-const engines = require('consolidate')
+
 
 /////////////////////////////////////////////////////////////////////
 
@@ -34,7 +34,7 @@ app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use('/userauth', UsersRouter);
 app.use('/adminauth', AdminsRouter);
 app.use('/userissue', UserIssueRouter);
-app.use('/solution', SolutionRouter);
+app.use('/solution', AdminSolutions);
 
 
 // routes
@@ -125,32 +125,25 @@ app.post('/userissue', async (req, res) => {
     res.redirect('/data');
 });
 
+app.post('/solution', function(req, res){
+  
+    const formData  = JSON.stringify( req.body);
+    console.log(formData);
+    const  http = new XMLHttpRequest();
+    const  url = "http://localhost:1010/solution/adminssolutions"
+    const  method = "POST";
+    const  data = formData
 
-app.post('/solution', async (req, res) => {
- 
- 
-  const formData  = JSON.stringify( req.body);
-  console.log(formData);
-  const  http = new XMLHttpRequest();
-  const  url = "http://localhost:1010/solution/solution"
-  const  method = "POST";
-  const  data = formData
-
-  http.open(method, url,);
-  http.setRequestHeader('Content-Type', 'application/json');
-  http.onreadystatechange = function(){
-    if (http.readyState === XMLHttpRequest.DONE && http.status === 201){
-      console.log(JSON.parse(http.responseText));
+    http.open(method, url,);
+    http.setRequestHeader('Content-Type', 'application/json');
+    http.onreadystatechange = function(){
+      if (http.readyState === XMLHttpRequest.DONE && http.status === 201){
+       console.log(JSON.parse(http.responseText));
     }
   }
 
   http.send(data);
 })
-
-
-
-
-
 
 
 

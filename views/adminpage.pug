@@ -14,13 +14,13 @@ each issue in x
             br
             |  Issue : #{issue.Issue}
             form.form(action='/solution' method='post')
-                input#Solution(type='text' placeholder='Solution' name='Solution' required='')
+                textarea#Solutions(type='text' placeholder='Solutions' name='Solutions' required='')
 
                 input.btn.btn-block.btn-primary(type='submit')
 
 script.
- Document.getElementById('Solution').textContent = Solution;
- const data = {Solution};
+ Document.getElementById('Solution').textContent = Solutions;
+ const data = {Solutions};
  const options = {
  method: 'POST'
  headers: {
