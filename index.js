@@ -158,6 +158,8 @@ app.post('/solution', function(req, res){
   }
 
   http.send(data);
+
+  res.render('adminpage')
 })
 
 
@@ -182,7 +184,7 @@ try {
 } catch (error) {
   console.log(error);
 }
-res.render('adminpage')
+
 
 })
 
