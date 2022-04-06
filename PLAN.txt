@@ -50,39 +50,25 @@ Admin page refresh button
 
 frontend
 Get data from userissues db to main page of admin page +
-design the form of reqests 
+design the form of reqests +
 
 
 
 OPT WATCH HOUR VIDEO OF CRUDS
-
-
-
-
 ----------- 
+Users Requests fetch back from users db to users main page (with button (close) 
+
+
+
+from issues redirect to issues page that finds data 
+from mongo db by usernames
+
+
+
+
+Create users issues
 Admin answers will be posted to db 
 and user page will be shown the data that was provided by admin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
