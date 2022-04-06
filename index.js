@@ -159,7 +159,7 @@ app.post('/solution', function(req, res){
 
   http.send(data);
 
-  res.render('adminpage')
+  res.redirect('adminpage')
 })
 
 
