@@ -19,30 +19,12 @@ html(lang="en")
     
             input.btn.btn-block.btn-primary(type='submit')
 
-
 each issue in x
         .shape              
            p
             |   Name : #{issue.Username} 
             br
             |  Issue : #{issue.Issue}
-            form.form(action='/solution' method='post')
-                textarea#Solutions(type='text' placeholder='Solutions' name='Solutions' required='')
-
-                input.btn.btn-block.btn-primary(type='submit')
-
-script.
- Document.getElementById('Solution').textContent = Solutions;
- const data = {Solutions};
- const options = {
- method: 'POST'
- headers: {
- 'Content-Type': 'application/json'
- },
- body: JSON.stringify(data)
-  };
- fetch('' , options)
- 
 
 
 script.
