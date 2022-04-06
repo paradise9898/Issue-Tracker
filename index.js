@@ -9,7 +9,7 @@ const AdminSolutions = require ('./controllers/AdminsSolutionRouter')
 const XMLHttpRequest = require('xhr2')
 const PORT = process.env.PORT || 1010
 const lkl = require('./models/UserIssue')
-
+const lkll = require('./models/UserIssue')
 
 /////////////////////////////////////////////////////////////////////
 
@@ -76,7 +76,7 @@ app.post('/userauth', async (req, res) => {
 
     http.send(data);
 
-    res.render('userpage')
+    res.redirect('userpage')
 });
 
 app.post('/adminauth', async (req, res) => {
@@ -116,14 +116,27 @@ app.post('/userissue', async (req, res) => {
     http.setRequestHeader('Content-Type', 'application/json');
     http.onreadystatechange = function(){
       if (http.readyState === XMLHttpRequest.DONE && http.status === 201){
-        console.log(JSON.parse(http.responseText));
+        consolelog(JSON.parse(http.responseText));
       }
     }
 
     http.send(data);
 
-    res.redirect('/data');
+    
+    res.redirect('userpage')
+
 });
+
+app.get('/userpage', async (req, res) => {
+  try {
+    const issue = await lkll.find();
+    res.render('userpage', {x:issue})
+
+  } catch (error) {
+    console.log(error);
+  }
+
+})
 
 app.post('/solution', function(req, res){
   
