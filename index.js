@@ -10,7 +10,7 @@ const XMLHttpRequest = require('xhr2')
 const PORT = process.env.PORT || 1010
 const lkl = require('./models/UserIssue')
 const lkll = require('./models/UserIssue')
-
+const sol = require('./models/AdminSolutions')
 /////////////////////////////////////////////////////////////////////
 
 
@@ -123,7 +123,7 @@ app.post('/userissue', async (req, res) => {
     http.send(data);
 
   
-    
+
     res.redirect('userpage')
 
 });
@@ -131,7 +131,8 @@ app.post('/userissue', async (req, res) => {
 app.get('/userpage', async (req, res) => {
   try {
     const issue = await lkll.find();
-    res.render('userpage', {x:issue})
+    const solution = await sol.find()
+   res.render('userpage', {x:issue, y:solution});
 
   } catch (error) {
     console.log(error);
