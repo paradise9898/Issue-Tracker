@@ -182,8 +182,8 @@ try {
 } catch (error) {
   console.log(error);
 }
+res.render('adminpage')
 
-res.redirect('/adminauth')
 })
 
 
