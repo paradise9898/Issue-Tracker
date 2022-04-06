@@ -183,6 +183,7 @@ try {
   console.log(error);
 }
 
+res.redirect('/adminauth')
 })
 
 
