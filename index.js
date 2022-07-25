@@ -198,7 +198,7 @@ try {
 
 async function launch(){
     try {
-        await mongoose.connect('mongodb+srv://testwork11:qwerty12345@cluster0.wb3ls.mongodb.net/testwork11?retryWrites=true&w=majority',{ useNewUrlParser: true } , { useUnifiedTopology: true },)
+        await mongoose.connect('mongodb+srv://issue:issue98@issuetracker.bwh1x.mongodb.net/?retryWrites=true&w=majority',{ useNewUrlParser: true } , { useUnifiedTopology: true },)
     } catch (error) {
         console.log(error);
     }
