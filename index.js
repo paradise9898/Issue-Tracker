@@ -62,7 +62,7 @@ app.post('/userauth', async (req, res) => {
     const formData  = JSON.stringify( req.body); 
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http://testwork10.herokuapp.com/userauth/usersregistration"
+    const  url = "http://localhost:1010/userauth/usersregistration"
     const  method = "POST";
     const  data = formData
 
@@ -84,7 +84,7 @@ app.post('/adminauth', async (req, res) => {
     const formData  = JSON.stringify( req.body);
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http://testwork10.herokuapp.com/adminauth/adminsregistration"
+    const  url = "http://localhost:1010/adminauth/adminsregistration"
     const  method = "POST";
     const  data = formData
 
@@ -108,7 +108,7 @@ app.post('/userissue', async (req, res) => {
     const formData  = JSON.stringify( req.body);
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http://testwork10.herokuapp.com/userissue/userissue"
+    const  url = "http://localhost:1010/userissue/userissue"
     const  method = "POST";
     const  data = formData
 
@@ -145,7 +145,7 @@ app.post('/solution', function(req, res){
     const formData  = JSON.stringify( req.body);
     console.log(formData);
     const  http = new XMLHttpRequest();
-    const  url = "http://testwork10.herokuapp.com/solution/adminssolutions"
+    const  url = "http://localhost:1010/solution/adminssolutions"
     const  method = "POST";
     const  data = formData
 
